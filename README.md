@@ -2,7 +2,7 @@
 Initially a demodulator for LG Smart Diagnostics acoustic signals
 
 
-LG Smart Diagnostics on home appliances appears to be using 4-MFSK for transmitting data using tones over an acoustic link either directly to a smartphone application or via a telephony carrier to support centers. The symbol rate appears to be ~25Hz.
+LG Smart Diagnostics on home appliances appears to be using 4-MFSK for transmitting data using tones over an acoustic link either directly to a smartphone application or via a telephony carrier to support centers. The symbol rate appears to be ~24Hz. Actual recored symbols appear to be ~1846 samples long at 44.1ksps average over a 65 symbol burst, implying a symbol rate of ~23.89 sym/sec.
 
 The necessity to have robust transmission even after potentially multiple encoding and transcoding stages, as common in modern voice telecomms has led LG to adopt a very robust an low bitrate form of signaling - FSK. 4 tones, 1.4kHz, 1.55kHz, 1.75kHz and 1.95kHz are used to transmit digital data. These frequencies fall confortably within narrowband voice transmission bandidth of ~3.5kHz. These are also out of the DTMF tone range in order not to interfere with the telephone network.
 
