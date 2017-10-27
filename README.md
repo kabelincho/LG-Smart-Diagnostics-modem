@@ -6,6 +6,14 @@ LG Smart Diagnostics on home appliances appears to be using 4-MFSK for transmitt
 
 The necessity to have robust transmission even after potentially multiple encoding and transcoding stages, as common in modern voice telecomms has led LG to adopt a very robust an low bitrate form of signaling - FSK. 4 tones, 1.4kHz, 1.55kHz, 1.75kHz and 1.95kHz are used to transmit digital data. These frequencies fall confortably within narrowband voice transmission bandidth of ~3.5kHz. These are also out of the DTMF tone range in order not to interfere with the telephone network.
 
+The tones used appear to be 4 consecutive full-tones in standard pitch tuning:
+F6 - 1396.91Hz
+G6 - 1567.98Hz
+A6 - 1760.00Hz
+C7 - 2093.00Hz
+
+This may have the effect of making the modem sound more melodic.
+
 On recording I have access to it appears that the ome appliance generates the desired tone as square wave, most probably PWM directly from an MCU pin, which is either directly or via a simple transistor amplifier fed to a lodspeaker - most likely a piezzo buzzer. A lto of the transmitted energy is wasted in harmonics, but this is most probably not an issue.
 
 This combined with the slow sybol rate makes for a somewhat musical signal. The dirty chiptune signal may also result in voice codecs recognising these sequences as voice and transmitting them better. Many codecs should be able to support tones in order to transmit DTMF. As tese tones are above DTMF it may be possible that some codecs will not recognise them as tones correctly and therefore need the extra harmonic content.
